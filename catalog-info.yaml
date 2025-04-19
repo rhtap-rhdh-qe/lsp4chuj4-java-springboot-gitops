@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lsp4chuj4-java-springboot-gitops
+  description: This is GitOps manifest for lsp4chuj4-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=lsp4chuj4-java-springboot
+    backstage.io/kubernetes-id: lsp4chuj4-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lsp4chuj4-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lsp4chuj4-java-springboot
